@@ -1,0 +1,179 @@
+@grid-float-breakpoints: 150px 
+*{
+	font-family: "微软雅黑";
+	margin:0;
+	padding: 0;
+}
+ul,li{
+	list-style: none;
+}
+body{
+	background:#f1f1f1;
+	width:100%;
+	padding-top:60px;
+}
+
+
+.clearfix:before,.clearfix:after {
+content:".";
+display:block;
+height:0;
+visibility:hidden;
+}
+.clearfix:after { clear:both; }/* For IE 6/7 (trigger hasLayout) */
+.clearfix { zoom:1; }
+
+/*-------------------------------------------------------*/
+#head{
+	width:100%;
+	height:20%;
+	float:left;
+	min-width: 90%;
+	float:left;
+}
+
+#ershoushu{
+	width:60%;
+	max-width: 233px;
+}
+
+#shopping_cart{
+	width:10%;
+	height:4%;
+	margin-left: 27%;
+	max-width: 45px;
+}
+
+
+/*-------------------------------------------------------*/
+#title{
+	width:83.5%;
+	height:30%;
+	float:left;
+	line-height:3;
+	min-width: 90%;
+}
+
+
+#nianji_title{
+	color:white;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	text-align: center;
+    padding:6% 6%;
+	font-size:100%;
+	background-color:#D95C5C;
+}
+
+
+#nianji{
+	display: none;
+}
+
+
+.nianji{
+	margin-top:2.5%;
+	padding: 10px 0px;
+	font-size: 100%;
+	color:black;
+	font-family: "微软雅黑";
+	border-width: 3px;
+	font-weight: bold;
+	border:groove;
+	border-width:1px;
+}
+
+
+
+
+.nianji:hover{
+	color:white;
+	font-weight: bolder;
+	background-color:#D95C5C;
+}
+
+/*-------------------------------------------------------*/
+
+#xueyuan_title{
+	padding: 6% 6%;
+	text-align: center;
+	font-size:100%;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	color:white;
+	background-color: #00B5AD;
+	margin-top: 1%;
+}
+
+/*-------------------------------------------------------*/
+#left-nav{
+	width:15%;
+	height:50%;
+	float:left;
+	margin-top:2%;
+	margin-left:2%;
+}
+
+.xueyuan{
+    line-height:400%;
+	text-align: center;
+	font-size:70%;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	color:black;
+	border:groove;
+	border-width:1px;
+	min-width: 60px;
+}
+
+
+.xueyuan:hover{
+	color:white;
+	font-weight: bolder;
+	background-color:#00B5AD;
+}
+
+
+/*-------------------------------------------------------*/
+#content{
+	margin-top:10.5%;
+	width:100%;
+	height:70%;
+}
+
+
+.contents{
+	float:left;
+	width:30%;
+	height:30%;
+	text-align: center;
+	min-width:200px;
+}
+
+
+.line{
+	width:100%;
+	float:left;
+}
+.article{
+	float:left;
+	width:66%;
+	margin-top:8%;
+	margin-left:30%;
+	margin-bottom: 20%;
+	font-family: "微软雅黑";
+	font-size: 60%;
+	font-weight: bold;
+}
+
+
+
+
+.pic{
+	max-width: 100%;
+	float:left;
+	width:100%;
+	height:45%;
+
+}

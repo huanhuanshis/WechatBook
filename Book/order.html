@@ -1,0 +1,115 @@
+<%@page language="java" contentType="text/html; charset=UTF-8"
+        pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList" %><%@page import="java.util.List" %>
+<%@page import="oursix.book.useragent.*" %>
+<%request.setCharacterEncoding("utf8"); %>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人信息填写</title>
+<style>
+body {
+  margin: 0px;
+  font-size: 16px;
+  background-color: #e8e8e8;
+}
+.content {
+  height: 50px;
+  background-color: #ffffff;
+}
+.ok {
+  height: 80px;
+}
+.splitor {
+  height: 1px;
+  background-color: #d8d8d8;
+}
+span {
+  margin: 4px;
+  font-weight: bold;
+}
+input {
+  width: 100%;
+  height: 35px;
+  border: 0px;
+  font-size: 16px;
+}
+button {
+  min-width: 120px;
+  height: 40px;
+  background-color: #35ac33;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+}
+.tip_bar {
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.tel_area input {
+  float:left;
+}
+</style>
+</head>
+<body>
+<%
+//UserAgent ua = new UserAgent(request.getHeader("User-Agent"));
+//if(ua.isWeixin()){
+%>
+<form id="formid" method="post" action="setorder.jsp" >
+<div class="tip_bar">填写您的真实信息，我们送书到您手中</div>
+<table width="100%" cellspacing="0px" cellpadding="0px">
+<tr class="content">
+  <td width="25%"><span>姓名</span></td>
+  <td colspan="2"><input id="name" type="text"  maxlength="16" placeholder="请填写真实姓名(必填)" name="name" value="" /></td>
+</tr>
+
+<tr class="splitor"><td colspan="3"></td></tr>
+<tr class="content">
+  <td><span>选择地点</span></td>
+  <td colspan="2">
+  <select name = "subject" id= "subject" >
+  		<option value="学一">学一</option>
+  		<option value="学二">学二</option>
+  		<option value="学三">学三</option>
+  		<option value="学四">学四</option>
+  		<option value="学五">学五</option>
+  		<option value="学六">学六</option>
+  		<option value="学八">学八</option>
+  		<option value="学九">学九</option>
+  		<option value="学十">学十</option>
+  		<option value="学十一">学十一</option>
+  		<option value="学十三">学十三</option>
+  		<option value="学二十九">学二十九</option>
+  </select></td>
+</tr>
+
+<tr class="splitor"><td colspan="3"></td></tr>
+<tr class="content">
+  <td><span>送达时间</span></td>
+  <td colspan="2"><select name = "level" id= "level">
+  		<option value="工作日">工作日</option>
+  		<option value="周末">周末</option>
+  		<option value="尽快">尽快</option>
+  </select></td>
+</tr>
+
+<tr class="splitor"><td colspan="3"></td></tr>
+<tr class="content">
+  <td><span>联系电话</span></td>
+   <td colspan="2" ><input id="telephone" type="tel" name="telephone" placeholder="您的手机号(必填)" value="" maxlength="15"/></td>
+</tr>
+<tr class="splitor"><td colspan="3"></td></tr>
+<tr class="ok"><td colspan="3" style="text-align:center"><button  onclick="jumpsetorder()" >确定</button></td></tr>
+</table>
+<input type="hidden" id="openid" value="">
+<input type="text" name="booklists" id="booklists" hidden="hidden"/>
+</form>
+</body>
+<%
+//}
+%>
+</html>

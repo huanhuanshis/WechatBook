@@ -1,0 +1,115 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="oursix.book.dao2business.DaoAndBusiness"%>
+<%@page import="oursix.book.tableinfo.*"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.Set"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="oursix.book.useragent.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+<title>Cart</title>
+<link rel="stylesheet" type="text/css" href="../css/shopping_cart.css">
+<script src="../js/jump.js"></script>
+<script src="../js/cookie.js"></script>
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet"
+	href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<%
+UserAgent ua = new UserAgent(request.getHeader("User-Agent"));
+//if(ua.isWeixin()){
+	String booklistString="";
+	double sum=0;
+	double originalsum=0;
+	Map<BookRow,Integer> bookmap = new HashMap<BookRow,Integer>();
+	if(request.getParameter("booklists")!=null){
+		booklistString=request.getParameter("booklists");
+	}
+	if(booklistString.trim().equals("")){
+		out.print("购物车是空的，快去买书学学学习啊");
+	}else{
+		bookmap=DaoAndBusiness.getbookmap(booklistString);
+		if(bookmap!=null){
+			sum=DaoAndBusiness.caculatesum(bookmap);
+			originalsum=DaoAndBusiness.caculateOriginalsum(bookmap);
+		}
+	}
+%>
+
+<body style="background-color: #f1f1f1">
+	<nav class="navbar navbar-default navbar-fixed-top" style="border:none">
+	<div class="container-fluid">
+		<img id="fanhui" onclick="jumphome()" src="../img/back.png" />
+		<img id="ershoushu" onclick="jumphome()" src="../img/beiyouershoushu.png" />
+	    <img id="shopping_cart"	 onclick="jumpcart()" src="../img/cart.png" />
+	</div>
+	</nav>
+	<div id="bencidingdan"><%if(!booklistString.trim().equals(""))
+								out.print("本次订单");
+							%></div>
+	<div id="container">
+	<%
+	if(bookmap!=null){
+		Set<Map.Entry<BookRow, Integer>> set = bookmap.entrySet();  //显示书的列表
+		for (Map.Entry<BookRow, Integer> entry: set) {
+		out.print("<script>saveprice("+entry.getKey().getGoodID()+","+entry.getKey().getPrice()+")</script>");
+	%>
+	<div class="cart_content clearfix">
+		<div class="row">
+			<div class="col-xs-4 col-md-4" onclick="jumpdetail(<%out.print(entry.getKey().getGoodID());%>)">
+				<img class="cart_pic" src="<%out.print(entry.getKey().getPictureURL());%>" style="display:block"/>
+			</div>
+			<div class="col-xs-3 col-md-3">
+				<div class="cart_article">
+					<div class="name" ><% out.print(entry.getKey().getGoodName());%></div>
+					<div class="jiage">价格:￥<span><% out.print(entry.getKey().getPrice());%>/本</span>&nbsp;&nbsp;&nbsp;<br><span class="huadiao">原价:￥<span><% out.print(entry.getKey().getOriginalPrice());%>/本</span></span></div>
+    	    	</div>
+			</div>
+			<div class="col-xs-5 col-md-5">
+				<img id="del" class="jian" src="../img/jian.png" onclick="delonebook(<% out.print(entry.getKey().getGoodID());%>)"/>
+    			<span class="number" id = "<%out.print(entry.getKey().getGoodID());%>"><% out.print(entry.getValue());%></span>
+    			<img id="add" class="jia" src="../img/jia.png" onclick="addonebook(<% out.print(entry.getKey().getGoodID());%>)" />
+			</div>
+		</div>
+	</div>
+		<% 
+		}
+	}
+		%>
+	</div> 
+	<div class="clearfix"></div>
+	<nav class="navbar navbar-default navbar-fixed-bottom"
+		style="background-color:#00B5AD">
+	<div class="container">
+		<div class="row">
+
+			<footer>
+			<div id="total"><script>var summoney="<%out.print(sum);%>";</script>
+				共计:￥<span id="moneysum"><%out.print(sum); %></span>
+			</div>
+			<button id="quereng" onclick="jumporder()">确认订单</button>
+			<div id="jiesheng">
+				<%if(sum>0)
+					out.print("为您节省:<span>别算了，节约很多钱。</span>");
+				%>
+			</div>
+			</footer>
+		</div>
+	</div>
+	</nav>
+</body>
+<%//}%>
+</html>

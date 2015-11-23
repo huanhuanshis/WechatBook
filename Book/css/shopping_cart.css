@@ -1,0 +1,159 @@
+*{
+	font-family: "微软雅黑";
+	margin:0;
+	padding: 0;
+}
+ul,li{
+	list-style: none;
+}
+body{
+	background:#f1f1f1;
+	width:100%;
+	padding-top:70px;
+	padding-bottom:70px;
+}
+
+
+.clearfix:before,.clearfix:after {
+content:".";
+display:block;
+height:0;
+visibility:hidden;
+}
+.clearfix:after { clear:both; }/* For IE 6/7 (trigger hasLayout) */
+.clearfix { zoom:1; }
+
+/*-----------------------------------------------------------------------------*/
+
+
+#ershoushu{
+	margin-left: 25%;
+	width:60%;
+	margin-top:2%;
+	max-width: 100%;
+}
+
+#shopping_cart{
+	width:4%;
+	height:4%;
+	margin-bottom: 1%;
+	max-width: 100%;
+}
+
+
+#fanhui{
+	width:4%;
+	height:4%;
+    float:left;
+    margin-left:3%;
+    margin-top:2%;
+}
+/*---------------------------------------------------------------------------*/
+
+#bencidingdan{
+	font-size:130%;
+	color:#666666;
+	margin-left: 4%;
+	font-weight:bold;
+	float:left;
+	margin-top:4%;
+}
+
+/*---------------------------------------------------------------------------*/
+.cart_content{
+	width:100%;
+	background-color: white;
+	float:left;
+	margin-top:3%;
+	margin-bottom: 4%;
+	padding-top:1%;
+	padding-bottom:1%;
+}
+
+
+
+.cart_pic{
+	max-width: 100%;
+	width:100%;
+	height:30%;
+	margin-right: 5%;
+}
+
+.cart_article{
+	margin-top:2%;
+	line-height:300%;
+	font-size:55%;
+}
+
+.name{
+	color:#666666;
+	margin-top:18%;
+}
+
+.jiage{
+	color:#FF6600;
+}
+
+.huadiao{
+	text-decoration: line-through;
+}
+
+.jia{
+	float:right;
+	width:45%;
+	max-width: 100%;
+	margin-top:35%;
+}
+
+.jian{
+	float:right;
+	width:45%;
+	max-width: 100%;
+	margin-top:35%;
+}
+
+.number{
+	font-size: 100%;
+	color:#00B5AD;
+	float:right;
+	font-weight: bolder;
+	margin-top:50%;
+}
+/*-----------------------------------------------------------------------------*/
+footer{
+	margin-top: 3%;
+	width:100%;
+	background-color:#00B5AD;
+	float:left;
+	margin-bottom:3%;
+}
+
+#total{
+	padding-left: 6%;
+	font-size:70%;
+	color:white;
+	font-weight: 500;
+}
+#jiesheng{
+	padding-top:2%;
+	padding-left: 6%;
+	font-size: 70%;
+	color:white;
+	font-weight: 500;
+}
+
+#quereng{
+	float:right;
+	margin-right:5%;
+	margin-top:-1%;
+    padding:0.5% 2%;
+	color:white;
+	font-size:120%;
+	font-weight: 500;
+	background-color: #D95C5C;
+	border: none;
+}
+
+
+
+

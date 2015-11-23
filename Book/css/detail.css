@@ -1,0 +1,156 @@
+*{
+	font-family: "微软雅黑";
+	margin:0;
+	padding: 0;
+}
+ul,li{
+	list-style: none;
+}
+body{
+	background:#f1f1f1;
+	width:100%;
+	padding-top:70px;
+	padding-bottom: 70px;
+}
+
+
+.clearfix:before,.clearfix:after {
+content:".";
+display:block;
+height:0;
+visibility:hidden;
+}
+.clearfix:after { clear:both; }/* For IE 6/7 (trigger hasLayout) */
+.clearfix { zoom:1; }
+
+
+/*----------------------------整体--------------------------------------------*/
+
+.big{
+	width:100%;
+	float:left;
+	padding-bottom: 70px;
+}
+
+/*-------------------------------------------------------------------------*/
+.pic{
+	width:100%;
+	height:40%;
+	text-align: center;
+	float:left;
+}
+.pic img{
+	width:30%;
+	max-width: 100%;
+}
+
+#ershoushu{
+	margin-left: 25%;
+	width:60%;
+	margin-top:2%;
+	max-width: 100%;
+}
+
+#shopping_cart{
+	width:4%;
+	height:4%;
+	margin-bottom: 1%;
+	max-width: 100%;
+}
+
+
+#fanhui{
+	width:4%;
+	height:4%;
+    float:left;
+    margin-left:3%;
+    margin-top:2%;
+}
+
+/*-------------------------------------------------------------------*/
+.title{
+	width:100%;
+	height:20%;
+	box-sizing: border-box;
+	margin-top:5%;
+	padding:1% 7%;
+	float:left;
+}
+
+#title-one{
+	font-size:200%;
+	font-weight: bold;
+	color:#000000;
+}
+
+#title-vice{
+	color:#FF6634;
+	margin-top:2%;
+	font-size:120%;
+	font-weight:bold;
+}
+
+/*-------------------------------------------------------------------*/
+.content{
+	width:100%;
+	box-sizing: border-box;
+	padding:1% 7%;
+	float:left;
+}
+
+
+#neirong{
+	width:70%;
+	height:40%;
+}
+
+
+/*-----------------------------------------------------------*/
+.row2{
+	width:100%;
+	float:left;
+	background-color: #00B5AD;
+	margin-top:2%;
+	box-sizing: border-box;
+	padding:2% 7%;
+}
+
+#left{
+	float:left;
+}
+
+#jia{
+	width:70px;
+	length:10%;
+	max-width: 100%;
+	
+}
+
+#jian{
+	width:70px;
+	length:10%;
+	max-width: 100%;
+}
+
+#current_num{
+	width:4%;
+	height:4%;
+	font-weight:bold;
+	font-size:200%;
+	margin-top:10%;
+	margin-left:3%;
+}
+
+#cart{
+	margin-top:3%;
+	margin-right:7%;
+	width:60%;
+	max-width: 100%;
+}
+
+#number_now{
+
+}
+
+
+
