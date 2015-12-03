@@ -1,8 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ page import="oursix.book.tableinfo.*,java.util.*" %>
-<%@ page import="oursix.book.dao2business.*" %>
-<%@ page import="oursix.book.useragent.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,61 +6,42 @@
 <title>Detail</title>
 <link rel="stylesheet" type="text/css" href="../css/detail.css">
 <!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet"
-	href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
 <script src="../js/cookie.js"></script>
-<script src="../js/jump.js"></script>
+
 </head>
 <body  style="background-color:#f1f1f1">
-<%
-//UserAgent ua = new UserAgent(request.getHeader("User-Agent"));
-//if(ua.isWeixin()){
-String goodid="";
-BookRow book ;
-if(request.getParameter("goodid")!=null){
-	goodid=request.getParameter("goodid");
-	out.print("<input hidden='hidden' id=goodid value="+goodid+" >"); //to show initial
-}
-book = DaoAndBusiness.getbookinfo(goodid); //页面的书单列表 
-if(book==null){
-	response.sendRedirect("www.baidu.com");
-	return;
-}
-%>
 	<nav class="navbar navbar-default navbar-fixed-top" style="border:none">
 	<div class="container-fluid">	
-		<img onclick="jumphome()" id="fanhui" src="../img/back.png"  /></a> 
-		<img onclick="jumphome()" id="ershoushu" src="../img/beiyouershoushu.png" /></a>
-		<img onclick="jumpcart()" id="shopping_cart" src="../img/cart.png" /></a>
+		<img  id="fanhui" src="img/back.png"  /></a> 
+		<img  id="ershoushu" src="img/beiyouershoushu.png" /></a>
+		<img  id="shopping_cart" src="img/cart.png" /></a>
 	</div>
 	</nav>
 	<div class="big">
 		<div class="pic">
-			<img id="pic" src=<%out.println(book.getPictureURL());%> />
+			<img id="pic" src="img/2PZ_N7%WOT8166$P2T{1VQX.png" />
 		</div>
 		
 		<div class="title">
-			<div id="title-one"><%out.println(book.getGoodName());%></div>
-			<div id="title-vice">价格:<%out.println(book.getPrice());%>/本
-			&nbsp;&nbsp;原价:<%out.println(book.getOriginalPrice());%>/本</div>
+			<div id="title-one">哈哈哈哈</div>
+			<div id="title-vice">价格:12/本
+			&nbsp;&nbsp;原价:12/本</div>
 		</div>
 		<div class="content">
 			<div>商品描述</div>
-			<div><%out.println(book.getDescription());%></div>
+			<div>阿达三家分晋扩大父接口的撒疯狂结婚登记</div>
 		</div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom" style="background-color:#00B5AD">
   <div class="container">
    <div class="row">
 
-		<img id="jia" src="../img/jia.png" onclick="addonebook(<%out.print(book.getGoodID());%>)"/> 
+		<img id="jia" src="img/jia.png" onclick="addonebook(<%out.print(book.getGoodID());%>)"/> 
 		<span id="<%out.print(book.getGoodID());%>"></span>
-		<img id="jian" src="../img/jian.png" onclick="delonebook(<%out.print(book.getGoodID());%>)"/>
+		<img id="jian" src="img/jian.png" onclick="delonebook(<%out.print(book.getGoodID());%>)"/>
 
 		<div style = "display:inline; float:right; width:70px;margin-top: 15px;">
 		<img id="cart" onclick="jumpcart()" src="../img/cart.png" />	
@@ -82,6 +58,4 @@ if(book==null){
 <form id="formid" action="cart.jsp" method="post">  
      <input type="text" name="booklists" id="booklists" hidden="hidden"/>
 </form>
-<%//}
-%>
 </html>
